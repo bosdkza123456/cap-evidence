@@ -1,0 +1,31 @@
+{
+  "version": "0.1",
+  "artifact": {
+    "digest": "sha256:ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+  },
+  "evidence": [
+    {
+      "version": "0.1",
+      "capability": "network.outbound",
+      "outcome": "present",
+      "basis": "observed",
+      "target": {
+        "family": "network",
+        "host": "api.example.com"
+      },
+      "scope": {
+        "os": "linux",
+        "target_scope": "api.example.com"
+      },
+      "run": {
+        "id": "fixture-run",
+        "completed": true
+      },
+      "action": "unknown",
+      "analyzer": {
+        "name": "fixture-only",
+        "version": "1"
+      }
+    }
+  ]
+}

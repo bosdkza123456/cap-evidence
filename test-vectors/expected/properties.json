@@ -1,0 +1,259 @@
+[
+  {
+    "id": "PROP-001",
+    "description": "Evaluation is order-independent.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-002",
+    "description": "Canonicalization is idempotent.",
+    "status": "blocked",
+    "blocked_by": "DEC-HASH-001",
+    "test_source": "internal/evaluate/blocked_test.go"
+  },
+  {
+    "id": "PROP-003",
+    "description": "Unverified present cannot become ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-004",
+    "description": "Not_observed cannot become ALLOW in enforce v0.1.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-005",
+    "description": "Empty decision scope cannot become ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-006",
+    "description": "No_match cannot become ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-007",
+    "description": "Reducing trust cannot make a decision less restrictive.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-008",
+    "description": "Implication cannot create ALLOW.",
+    "status": "partial_foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go",
+    "limitation": "trace-only implication helper; evaluator integration pending"
+  },
+  {
+    "id": "PROP-009",
+    "description": "Derived assertions are not persisted as evidence.",
+    "status": "partial_foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go",
+    "limitation": "internal type separation; final canonical profile pending"
+  },
+  {
+    "id": "PROP-010",
+    "description": "Derived out-of-scope assertions have no policy effect.",
+    "status": "partial_foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go",
+    "limitation": "out-of-scope trace helper only; restrictive target propagation pending"
+  },
+  {
+    "id": "PROP-011",
+    "description": "Stale present remains present.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-012",
+    "description": "Incomplete runs cannot produce not_observed.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-013",
+    "description": "Invalid evidence cannot silently disappear.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-014",
+    "description": "A new semantic state cannot silently use an old default.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-015",
+    "description": "Review cannot be weakened into ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-016",
+    "description": "Audit cannot become an authorization gate.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-017",
+    "description": "Registry PATCH cannot alter policy semantics.",
+    "status": "partial_foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go",
+    "limitation": "represented registry fields only; release migration protocol pending"
+  },
+  {
+    "id": "PROP-018",
+    "description": "Same evidence may produce different trust under different evaluator contexts.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-019",
+    "description": "Same analyzer does not imply same run/target identity.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-020",
+    "description": "Artifact mismatch never produces ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-021",
+    "description": "Irrelevant not_observed does not change decision.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-022",
+    "description": "Input derived records are rejected.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/validate/vectors_test.go"
+  },
+  {
+    "id": "PROP-023",
+    "description": "Producer cannot control evaluator-owned trust.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/validate/vectors_test.go"
+  },
+  {
+    "id": "PROP-024",
+    "description": "Producer cannot control contains_parent_reference.",
+    "status": "blocked",
+    "blocked_by": "DEC-PATH-001",
+    "test_source": "internal/evaluate/blocked_test.go"
+  },
+  {
+    "id": "PROP-025",
+    "description": "Security equivalence does not change evidence identity.",
+    "status": "blocked",
+    "blocked_by": "DEC-HASH-001",
+    "test_source": "internal/evaluate/blocked_test.go"
+  },
+  {
+    "id": "PROP-026",
+    "description": "Unknown platform cannot broaden ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-027",
+    "description": "Raw parent reference cannot produce ALLOW.",
+    "status": "blocked",
+    "blocked_by": "DEC-PATH-001",
+    "test_source": "internal/evaluate/blocked_test.go"
+  },
+  {
+    "id": "PROP-028",
+    "description": "Universal ALLOW patterns are rejected.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-029",
+    "description": "Unsupported glob syntax is rejected.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-030",
+    "description": "IPv4-mapped IPv6 equivalence cannot create ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-031",
+    "description": "Invalid target cannot silently downgrade into harmless unknown.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-032",
+    "description": "Failed/unknown action cannot satisfy ALLOW.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go"
+  },
+  {
+    "id": "PROP-033",
+    "description": "Executable name alone cannot satisfy ALLOW.",
+    "status": "partial_foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/evaluate_test.go",
+    "limitation": "non-network targets unavailable; positive executable matcher pending"
+  },
+  {
+    "id": "PROP-034",
+    "description": "Adding an irrelevant in-scope assertion cannot preserve ALLOW if it violates an explicit restrictive policy.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/evaluate/mixed_bundle_test.go"
+  },
+  {
+    "id": "PROP-035",
+    "description": "Reserved extension names cannot shadow evaluator-owned fields.",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/validate/vectors_test.go"
+  },
+  {
+    "id": "PROP-023",
+    "description": "    \u2193",
+    "status": "foundation_test",
+    "blocked_by": null,
+    "test_source": "internal/validate/vectors_test.go"
+  }
+]

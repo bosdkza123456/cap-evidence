@@ -1,0 +1,90 @@
+[
+  {
+    "id": "TEST-EVIDENCE-observed-present",
+    "path": "test-vectors/evidence/observed-present.json",
+    "valid": true
+  },
+  {
+    "id": "TEST-EVIDENCE-declared-present",
+    "path": "test-vectors/evidence/declared-present.json",
+    "valid": true
+  },
+  {
+    "id": "TEST-EVIDENCE-declared-absent",
+    "path": "test-vectors/evidence/declared-absent.json",
+    "valid": true
+  },
+  {
+    "id": "TEST-EVIDENCE-unknown",
+    "path": "test-vectors/evidence/unknown.json",
+    "valid": true
+  },
+  {
+    "id": "TEST-EVIDENCE-not-observed",
+    "path": "test-vectors/evidence/not-observed.json",
+    "valid": true
+  },
+  {
+    "id": "TEST-EVIDENCE-inferred-present",
+    "path": "test-vectors/evidence/inferred-present.json",
+    "valid": false,
+    "status": "blocked",
+    "blocked_by": "DEC-HASH-001",
+    "expected_reason": "unresolved_semantics"
+  },
+  {
+    "id": "TEST-EVIDENCE-producer-trust",
+    "path": "test-vectors/evidence/producer-trust.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-producer-derived",
+    "path": "test-vectors/evidence/producer-derived.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-producer-parent",
+    "path": "test-vectors/evidence/producer-parent.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-extension-collision",
+    "path": "test-vectors/evidence/extension-collision.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-unknown-critical-extension",
+    "path": "test-vectors/evidence/unknown-critical-extension.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-invalid-action",
+    "path": "test-vectors/evidence/invalid-action.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-invalid-outcome",
+    "path": "test-vectors/evidence/invalid-outcome.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-ambiguous-ip",
+    "path": "test-vectors/evidence/ambiguous-ip.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-ipv6-zone",
+    "path": "test-vectors/evidence/ipv6-zone.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-relative-path",
+    "path": "test-vectors/evidence/relative-path.json",
+    "valid": false
+  },
+  {
+    "id": "TEST-EVIDENCE-missing-action",
+    "path": "test-vectors/evidence/missing-action.json",
+    "valid": false
+  }
+]

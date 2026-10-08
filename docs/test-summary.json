@@ -1,0 +1,31 @@
+{
+  "semantic_state": "foundation-0.2",
+  "toolchain": "go1.26.8 linux/amd64",
+  "test_events": {
+    "run": 155,
+    "output": 314,
+    "pass": 151,
+    "skip": 4
+  },
+  "blocked_tests": [
+    "TestBlockedConformance/PROP-002",
+    "TestBlockedConformance/PROP-024",
+    "TestBlockedConformance/PROP-025",
+    "TestBlockedConformance/PROP-027"
+  ],
+  "checks": {
+    "go_test": "passed, CGO_ENABLED=0",
+    "go_vet": "passed",
+    "gofmt": "clean",
+    "race": "passed, CGO_ENABLED=1 for race instrumentation only",
+    "parser_fuzz": "passed, 10 seconds, 8622 executions",
+    "host_fuzz": "passed, 10 seconds, 8661 executions, single-worker rerun",
+    "vendor": "go mod verify passed; regeneration matches all 17 vendor files",
+    "linux_build": "passed and smoke-tested, CGO_ENABLED=0",
+    "windows_build": "cross-compiled, CGO_ENABLED=0; not executed on Windows",
+    "ci": "configuration only; external CI has not run",
+    "canonical_conflict_host_fuzz": "passed, 10 seconds, 73810 executions",
+    "host_fuzz_initial_parallel_attempt": "context deadline exceeded; rerun alone passed; no minimized crashing input reported"
+  },
+  "scoped_revision": "canonical network-host conflict keys, complete grouped diagnostics and regression/report updates"
+}

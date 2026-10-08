@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "semantic_state": "foundation-0.2",
+  "registry_version": "fixture-0.2",
+  "registry_digest": "sha256:13d9672a622629a9f6e7c3706278da566f1e90ee498e17fbb39fb088032e78e1",
+  "decision_scope": [
+    "network.outbound"
+  ],
+  "out_of_scope": "review",
+  "rules": [
+    {
+      "id": "allow-api",
+      "capability": "network.outbound",
+      "effect": "allow",
+      "target": {
+        "family": "network",
+        "host": "*.com"
+      }
+    }
+  ]
+}

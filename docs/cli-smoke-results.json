@@ -1,0 +1,62 @@
+[
+  {
+    "mode": "enforce",
+    "exit_code": 1,
+    "output": {
+      "decision": "review",
+      "gating": true,
+      "diagnostics": [],
+      "trace": [
+        {
+          "kind": "evidence",
+          "capability": "network.outbound",
+          "classification": "allow_requirements_unsatisfied",
+          "rule_id": "allow-api"
+        }
+      ],
+      "semantic_state": "foundation-0.2",
+      "registry_version": "fixture-0.2",
+      "registry_digest": "sha256:13d9672a622629a9f6e7c3706278da566f1e90ee498e17fbb39fb088032e78e1"
+    }
+  },
+  {
+    "mode": "audit",
+    "exit_code": 0,
+    "output": {
+      "decision": "review",
+      "gating": false,
+      "diagnostics": [],
+      "trace": [
+        {
+          "kind": "evidence",
+          "capability": "network.outbound",
+          "classification": "allow_requirements_unsatisfied",
+          "rule_id": "allow-api"
+        }
+      ],
+      "semantic_state": "foundation-0.2",
+      "registry_version": "fixture-0.2",
+      "registry_digest": "sha256:13d9672a622629a9f6e7c3706278da566f1e90ee498e17fbb39fb088032e78e1"
+    }
+  },
+  {
+    "mode": "inform",
+    "exit_code": 0,
+    "output": {
+      "decision": "review",
+      "gating": false,
+      "diagnostics": [],
+      "trace": [
+        {
+          "kind": "evidence",
+          "capability": "network.outbound",
+          "classification": "allow_requirements_unsatisfied",
+          "rule_id": "allow-api"
+        }
+      ],
+      "semantic_state": "foundation-0.2",
+      "registry_version": "fixture-0.2",
+      "registry_digest": "sha256:13d9672a622629a9f6e7c3706278da566f1e90ee498e17fbb39fb088032e78e1"
+    }
+  }
+]

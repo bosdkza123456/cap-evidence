@@ -1,0 +1,40 @@
+name: foundation
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    env:
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+    steps:
+      # Official v4/v5 tag targets resolved and pinned on 2026-10-08.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version-file: .go-version
+          check-latest: false
+          cache: true
+      - name: Verify dependency and vendor content
+        run: |
+          go mod download
+          go mod verify
+          go mod vendor
+          git diff --exit-code -- go.mod go.sum vendor/
+          test -z "$(git ls-files --others -- vendor/)"
+      - run: test -z "$(gofmt -l internal adapters cmd)"
+      - run: go test -mod=vendor ./...
+      - run: go vet -mod=vendor ./...
+      - run: go test -mod=vendor -race ./...
+        env:
+          CGO_ENABLED: '1'
+      - run: go test ./internal/parse -run '^$' -fuzz '^FuzzDecode$' -fuzztime 10s -parallel 2
+      - run: go test ./internal/target -run '^$' -fuzz '^FuzzHost$' -fuzztime 10s -parallel 2
+      - run: go build -trimpath -o /tmp/capevidence ./cmd/capevidence
+      - run: go build -trimpath -o /tmp/capevidence.exe ./cmd/capevidence
+        env:
+          GOOS: windows
+          GOARCH: amd64

@@ -1,0 +1,10 @@
+{
+  "version": "fixture-0.2",
+  "semantic_state": "foundation-0.2",
+  "capabilities": {
+    "network.outbound": "network"
+  },
+  "security_equivalences": [
+    "ipv4_mapped_ipv6_restrictive_v1"
+  ]
+}

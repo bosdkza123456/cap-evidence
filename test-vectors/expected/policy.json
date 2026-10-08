@@ -1,0 +1,17 @@
+[
+  {
+    "id": "TEST-POLICY-universal",
+    "path": "test-vectors/policy/universal.json",
+    "expected": "invalid_policy"
+  },
+  {
+    "id": "TEST-POLICY-broad-suffix",
+    "path": "test-vectors/policy/broad-suffix.json",
+    "expected": "invalid_policy"
+  },
+  {
+    "id": "TEST-POLICY-substring",
+    "path": "test-vectors/policy/substring.json",
+    "expected": "invalid_policy"
+  }
+]
