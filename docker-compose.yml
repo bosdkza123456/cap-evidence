@@ -1,0 +1,22 @@
+services:
+  collector-harness:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "10001:10001"
+    privileged: false
+    cap_drop: [ALL]
+    cap_add: [SYS_PTRACE, NET_ADMIN]
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    network_mode: none
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=128m,mode=1777
+    pids_limit: 128
+    mem_limit: 512m
+    cpus: 1.0
+    restart: "no"
+    init: true
+    # Default seccomp/AppArmor stay enabled. BLOCKED is not a passing run.
+    # No host mounts, Docker socket, ports, secrets or privileged escalation.

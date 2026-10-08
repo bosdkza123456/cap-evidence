@@ -1,0 +1,29 @@
+{
+  "changed_existing_files": [
+    "docs/implementation-report.md",
+    "docs/pipeline-smoke-results.json",
+    "docs/test-summary.json",
+    "experiments/linux-collector/README.md",
+    "experiments/linux-collector/collector.py",
+    "experiments/linux-collector/test_collector.py"
+  ],
+  "added_files": [
+    "docs/phase1-2-report-th.md"
+  ],
+  "unexpected_changes": [],
+  "unchanged_existing_files": 141,
+  "protected_paths_unchanged": [
+    "internal/",
+    "adapters/",
+    "cmd/",
+    "docs/decision-register.md",
+    "docs/raw-event-contract.md",
+    ".github/",
+    "go.mod",
+    "go.sum",
+    "LICENSE",
+    "SECURITY.md",
+    "vendor/"
+  ],
+  "audit_and_manifest_generated_after_comparison": true
+}

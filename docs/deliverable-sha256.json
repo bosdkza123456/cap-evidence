@@ -1,7 +1,11 @@
 [
   {
+    "path": ".dockerignore",
+    "sha256": "4bf5152b63e096e910c4ec2115467b576a45be4fcfc9bb640b645800167779d5"
+  },
+  {
     "path": ".github/workflows/ci.yml",
-    "sha256": "c44268003e48839dbcd8bdfa089fc3038590c846ccb8a65e040aaaab62fcabd8"
+    "sha256": "8983ba70d45d367cb4c5673be562fa83511d69dd79b51d7d36281270d6962df0"
   },
   {
     "path": ".gitignore",
@@ -18,6 +22,10 @@
   {
     "path": "CONTRIBUTING.md",
     "sha256": "cb47231ade7efcedfdc5da74373159215dbf40259eacd26028386145188590cc"
+  },
+  {
+    "path": "Dockerfile",
+    "sha256": "ec7b533b0a2abfcecb76373fedfbd0a6de71444cc80a7e1bf14a4a515f362885"
   },
   {
     "path": "GOVERNANCE.md",
@@ -52,12 +60,100 @@
     "sha256": "d788e3cbc79d436f4a49b8b283db00652bf71ec157351cb69e6f395a1fa5cde3"
   },
   {
+    "path": "adapters/ossf-package-analysis/spike_test.go",
+    "sha256": "836139e1c7f69f1d742c2c018bee6d983ec0eeb8a4f46fc624b9ff65247765a9"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/colorsss-0.0.2.json",
+    "sha256": "afd62b493fe76df88a258703e3d41870eb848ef09bbc493ee55077e5c4ad2bb7"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/discordcmd-0.0.2.json",
+    "sha256": "292922c18267569e113bbdb5b8d3738a9201ba4439d9fb55ceda0a11e5ed2965"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/provenance.json",
+    "sha256": "df9f6113958a967813fb413a7463b5fb68152815f77e0081169f2e083b400f12"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/docs/case_studies.md",
+    "sha256": "58700c0951c860781386a7bc04d03196705cc6b0de703e0613f7679ae4860289"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/docs/data_schema.md",
+    "sha256": "6e497668f6629805483fbfc2ff1196c62ec8c5600685c73500cdea7bb9051a51"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/analysis/status.go",
+    "sha256": "edcf0fcfadaf11b76c221b1078f07fe01fb477aabab0dab0d85eb837f85f0de7"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/dynamicanalysis/analysis.go",
+    "sha256": "b1462b165eb9affcbcae0712eb9e4978e6d9dd1a8a3cfb7e956bf1e79c3bfc9a"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/resultstore/resultstore.go",
+    "sha256": "745c0fe8da980499dee0ba90db45d338c16fa90b6d803046416935a1028790af"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/staticanalysis/result.go",
+    "sha256": "c805e525652a4564aac7427aa2d0fd8b7c68671ca28faa3aa7a31205f9f12556"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/strace/strace.go",
+    "sha256": "d0dcbf20531d4a14898a23e20e98052bcd564061156d2c05722e49934a9cb39d"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/strace/strace_test.go",
+    "sha256": "e47f5979d5fd4739e24be8e328cbba80e5c3734950c77a019cc4b86ab6b05ba7"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/worker/rundynamic.go",
+    "sha256": "2efd6d344945d0c7cd9067c85a5955c0b34aee4f49b643c787281d1650920934"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/pkg/api/analysisrun/phase.go",
+    "sha256": "65fe002cd8372b455982c88e1c33a058071fef782e5bdc8bc66131dc0ea931ee"
+  },
+  {
+    "path": "adapters/ossf-package-analysis/testdata/spike/upstream-source/pkg/api/analysisrun/result.go",
+    "sha256": "6d2e0ec3145c3635dd21eb70b907c583d2c76d7c2003ccb81ce9c8b4f1d18a86"
+  },
+  {
     "path": "adapters/ossf-package-analysis/testdata/unmapped.json",
     "sha256": "35dfb584a2d5d418658c30b03c211c820268c4490d65c9ee7d94ce63bda59dc3"
   },
   {
+    "path": "adapters/raw-event-preview/preview.go",
+    "sha256": "2d19180f26453caf451a3f589358638848efebe65add3e6f3ecd407a88cb6d14"
+  },
+  {
+    "path": "adapters/raw-event-preview/preview_test.go",
+    "sha256": "3a42c41a256760c6c8ef7f43df919ff053011e2cc337b93e95973d0adc8aee28"
+  },
+  {
+    "path": "adapters/raw-event-preview/testdata/synthetic-connect.json",
+    "sha256": "0b4d1d7cafaa744fdb4588a34d2b2904ab41cf1b1881b8a5755b273a38ee0eb2"
+  },
+  {
     "path": "cmd/capevidence/main.go",
     "sha256": "c176d28e7d383e59e1a31a711798674e9dda3c7481785feb6f6619ea2527bccc"
+  },
+  {
+    "path": "cmd/rawpreview/harness_config_test.go",
+    "sha256": "8de4c8fe498075175a6fc7602e8b213a357bd6754b6a63d1e1a80b551796f363"
+  },
+  {
+    "path": "cmd/rawpreview/main.go",
+    "sha256": "218ec483ce805b95dcd79d019115b0f3178aa5e2c0703592287bf5809b88078a"
+  },
+  {
+    "path": "docker-compose.yml",
+    "sha256": "2d1c4c4ed385a3f3e63b0ed5fa3a3d6db26c507c8c3341de97059413cf17aa73"
   },
   {
     "path": "docs/ADR-001-foundation.md",
@@ -72,20 +168,80 @@
     "sha256": "dab20c2c2cfc39334d9fdd13409c4fc76ff48d42c8d7cc483b17210e3bc68b53"
   },
   {
+    "path": "docs/collector-scope-audit.json",
+    "sha256": "bbdac7acfc981217d47f0681ce8e03511d8b6d14bb59d17326030d9e3d641c60"
+  },
+  {
+    "path": "docs/controlled-harness-report-th.md",
+    "sha256": "8f0c52ca72edbe82310792cce9d958605c1353b5006d55716402062e5b7f29ce"
+  },
+  {
+    "path": "docs/controlled-harness-scope-audit.json",
+    "sha256": "0fc4d541a88e7d2f22677d355dd0e565361f649f709570534a4db1e78a2731f7"
+  },
+  {
     "path": "docs/implementation-brief.md",
     "sha256": "872a86a96ba8ebf16a9e5e306e0a5ad87b8abe0b49392d6340c5f4e428643fe7"
   },
   {
     "path": "docs/implementation-report.md",
-    "sha256": "eb203e4a2f01387cfea32092bd623aeeb0fbca27a87b1d56307bec305a4172d7"
+    "sha256": "98786b7e8d2da704655ab7ecf446f174710d90fabc5f98ac0e8d5401895919ee"
+  },
+  {
+    "path": "docs/integration-harness-live-result.json",
+    "sha256": "e89997a3376fd60ebcfaf99d7cc6e4e28d4f16ef9340bae5dd208cde9c1f6c11"
+  },
+  {
+    "path": "docs/linux-collector-report-th.md",
+    "sha256": "2ef7d7c7dcadc58f1b39ff45b797553db17237a3cac34ba6b5f10429aa71619d"
+  },
+  {
+    "path": "docs/openssf-spike-report-th.md",
+    "sha256": "b67bf69f8cf6c00bedd89206c56ca3f3b16e7723be2723a4cb1cb02a599aaca0"
+  },
+  {
+    "path": "docs/openssf-spike-scope-audit.json",
+    "sha256": "170fe497b08b5406a24d8d6127a7d7050f984afb7d30b5d321d2e208d811242a"
+  },
+  {
+    "path": "docs/phase1-2-report-th.md",
+    "sha256": "ea8637bc7568a984c04647dce75b95b555f71ee47153cb896b36901668c81010"
+  },
+  {
+    "path": "docs/phase1-2-scope-audit.json",
+    "sha256": "96bb9f718a01fd43f6085514a5fc245f63b0e68d786fbf766ff07ffda73e43a3"
+  },
+  {
+    "path": "docs/pipeline-hardening-report-th.md",
+    "sha256": "b4aef31be5cde745ef7fae4b9050d161e5cb1a8b1c2c73f5af991e91c8cf3975"
+  },
+  {
+    "path": "docs/pipeline-scope-audit.json",
+    "sha256": "fced645c70ec24a4944661ab7ae477fdf5fd93a373d634f8a709ca3834627d23"
+  },
+  {
+    "path": "docs/pipeline-smoke-results.json",
+    "sha256": "bee1ab1241cb53a025265317fb12b2475a6a12058b4b0fc2ee1f2013e4082fb1"
   },
   {
     "path": "docs/public-release-checklist.md",
-    "sha256": "b6a5b64959806d20316936e111810360038f055c59264f6c90eff2e6d121c1cd"
+    "sha256": "cdb9f2b37b53c553a683f0cc700e205d2375b3ea0fcd1f40bc1c69b710bbf063"
   },
   {
     "path": "docs/quickstart-th.md",
     "sha256": "85e93c6c561e178c028d35bd1d224bd0e4208a6f2410596a79b2cfbad1f97be9"
+  },
+  {
+    "path": "docs/raw-event-contract.md",
+    "sha256": "f8917f12a6a8dfe13a0794174ef991f8a96dc021243236e9bc113e16453e803d"
+  },
+  {
+    "path": "docs/raw-event-report-th.md",
+    "sha256": "ec9555d0c9dc066fd40ec1d86704de1466adee61a0d52f57d4ddc2eb33012d9f"
+  },
+  {
+    "path": "docs/raw-event-scope-audit.json",
+    "sha256": "902600c7126b97ddb32fc845b2becea995d627fe875ae6acd0396ce63dcaaa8e"
   },
   {
     "path": "docs/security-fix-report.md",
@@ -93,11 +249,39 @@
   },
   {
     "path": "docs/test-summary.json",
-    "sha256": "cc6098c735518dd1cdc041a2963f7ab79bd2b97f921d8fe505612718ad83b801"
+    "sha256": "1fc49013413d6257015da68150bba7b97348d863f8f31a19a36d203d5ef85981"
   },
   {
     "path": "docs/threat-coverage.md",
     "sha256": "ae2f6ad87de444ca9b49b684686a06f39a4dd27b784895f3af07aa4f461f8b39"
+  },
+  {
+    "path": "experiments/linux-collector/README.md",
+    "sha256": "062e78519de1b1828e8b5ad71a1333865d62d98300bcad951b6d38c9f790d78e"
+  },
+  {
+    "path": "experiments/linux-collector/collector.py",
+    "sha256": "bc74db1426e1841b5303aa011e966b2991834e2cd2a426b18a641d0789d22832"
+  },
+  {
+    "path": "experiments/linux-collector/harness.py",
+    "sha256": "cc469b22d60be26759ea3812e3d4f7d35bfca9256167f00cc6551d47a1612d0d"
+  },
+  {
+    "path": "experiments/linux-collector/test_collector.py",
+    "sha256": "6be98552215a1bd6d9633f95c3cf95694131f8d289981798c9a68cdc6ca20f2a"
+  },
+  {
+    "path": "experiments/linux-collector/test_harness.py",
+    "sha256": "e2d7d91bbaf88dcb242c0c0f2d846e29778335aa2534300253219d694ed50866"
+  },
+  {
+    "path": "experiments/linux-collector/testdata/runtime-probe.json",
+    "sha256": "37f3443c51272cd1441182563c81b076689e737a41c99d7dbb772283e625a7ce"
+  },
+  {
+    "path": "experiments/linux-collector/workload.c",
+    "sha256": "e5fc642d7c1d3df87f6a139622c4f589723f178690c6643472d385d69591623c"
   },
   {
     "path": "go.mod",

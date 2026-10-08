@@ -1,0 +1,38 @@
+{
+  "changed_existing_files": [
+    "docs/implementation-report.md",
+    "docs/test-summary.json"
+  ],
+  "added_files": [
+    "adapters/ossf-package-analysis/spike_test.go",
+    "adapters/ossf-package-analysis/testdata/spike/colorsss-0.0.2.json",
+    "adapters/ossf-package-analysis/testdata/spike/discordcmd-0.0.2.json",
+    "adapters/ossf-package-analysis/testdata/spike/provenance.json",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/LICENSE",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/docs/case_studies.md",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/docs/data_schema.md",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/analysis/status.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/dynamicanalysis/analysis.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/resultstore/resultstore.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/staticanalysis/result.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/strace/strace.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/strace/strace_test.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/internal/worker/rundynamic.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/pkg/api/analysisrun/phase.go",
+    "adapters/ossf-package-analysis/testdata/spike/upstream-source/pkg/api/analysisrun/result.go",
+    "docs/openssf-spike-report-th.md"
+  ],
+  "unexpected_changes": [],
+  "unchanged_existing_files": 110,
+  "protected_paths_unchanged": [
+    "internal/",
+    "adapters/ossf-package-analysis/adapter.go",
+    "docs/decision-register.md",
+    ".github/",
+    "go.mod",
+    "go.sum",
+    "LICENSE",
+    "vendor/"
+  ],
+  "manifest_will_be_regenerated": true
+}

@@ -1,5 +1,14 @@
 name: foundation
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      live_runner:
+        description: Live harness runner (dedicated runner requires trusted manual dispatch)
+        type: choice
+        options: [ubuntu-24.04, capspec-live]
+        default: ubuntu-24.04
 permissions:
   contents: read
 jobs:
@@ -28,7 +37,7 @@ jobs:
       - run: test -z "$(gofmt -l internal adapters cmd)"
       - run: go test -mod=vendor ./...
       - run: go vet -mod=vendor ./...
-      - run: go test -mod=vendor -race ./...
+      - run: go test -mod=vendor -v -race ./...
         env:
           CGO_ENABLED: '1'
       - run: go test ./internal/parse -run '^$' -fuzz '^FuzzDecode$' -fuzztime 10s -parallel 2
@@ -38,3 +47,49 @@ jobs:
         env:
           GOOS: windows
           GOARCH: amd64
+
+      - name: Build inspection preview
+        run: go build -mod=vendor -trimpath -o /tmp/cap-rawpreview ./cmd/rawpreview
+      - name: Collector and harness unit/integration tests (synthetic)
+        run: python3 -m unittest discover -s experiments/linux-collector -v
+        env:
+          CAP_PREVIEW_TEST_BIN: /tmp/cap-rawpreview
+          PYTHONDONTWRITEBYTECODE: '1'
+      - name: Raw preview fuzz
+        run: go test ./adapters/raw-event-preview -run '^$' -fuzz '^FuzzInspect$' -fuzztime 10s -parallel 1
+      - name: Canonical conflict fuzz
+        run: go test ./internal/evaluate -run '^$' -fuzz '^FuzzCanonicalConflictHost$' -fuzztime 10s -parallel 1
+      - name: Controlled workload syntax
+        run: cc -Wall -Wextra -Werror -fsyntax-only experiments/linux-collector/workload.c
+
+  live-harness:
+    # PRs always use the hosted runner. Dedicated label only on manual dispatch.
+    runs-on: ${{ inputs.live_runner || 'ubuntu-24.04' }}
+    timeout-minutes: 15
+    env:
+      GOTOOLCHAIN: local
+      CGO_ENABLED: '0'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version-file: .go-version
+          check-latest: false
+          cache: true
+      - name: Install controlled tracing tools on hosted runner
+        if: ${{ inputs.live_runner != 'capspec-live' }}
+        run: sudo apt-get update && sudo apt-get install -y gcc strace bubblewrap
+      - run: go build -mod=vendor -trimpath -o /tmp/cap-rawpreview ./cmd/rawpreview
+      - name: Genuine controlled live harness (BLOCKED is nonzero)
+        run: python3 experiments/linux-collector/harness.py --preview /tmp/cap-rawpreview --report /tmp/cap-live-result.json
+      - name: Report explicit live status
+        if: always()
+        run: |
+          if [ -f /tmp/cap-live-result.json ]; then
+            cat /tmp/cap-live-result.json >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'FAIL: live harness did not produce a status report' >> "$GITHUB_STEP_SUMMARY"
+          fi

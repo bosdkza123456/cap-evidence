@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED",
+  "reason": "runtime_prerequisite_blocked",
+  "genuine_trace_collected": false,
+  "authorization_ready": false,
+  "pipeline_status": "BLOCK",
+  "checks": {},
+  "exit_code": 2
+}

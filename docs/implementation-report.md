@@ -23,3 +23,27 @@ Known limitations: conflict matching remains exact for the full scope, including
 New regressions cover mixed-case hosts, different runs/scopes, unchanged filesystem/executable key behavior, evidence immutability, distinct diagnostic tokens for three simultaneous observation groups (including DENY), and reversed record order. The test suite now explicitly documents that TestRulePlatformAppliesToRestrictiveEffects was replaced by TestRestrictiveRuleRejectsOS to reject the faulty prior OS-filter behavior. No DEC status is changed in this revision.
 
 Canonical conflict-host fuzz passed 73,810 executions in its 10-second run. The unchanged target-host fuzzer initially reported context deadline exceeded during the parallel checks; a standalone one-worker rerun passed 8,661 executions. This timeout and rerun are recorded rather than omitted from validation history.
+
+## OpenSSF real-output spike (2026-10-08)
+
+Pinned upstream source and two byte-exact historical public outputs were reviewed across all eight SPIKE topics. See `openssf-spike-report-th.md` and fixture provenance. The adapter implementation remains fail-closed; no evaluator or decision-register changes. Regression boundaries verify no invented evidence, success, coverage or negative assertions. These fixtures are not asserted to originate from the pinned current source commit, and no upstream analyzer/package was executed. Authorization mapping remains blocked on raw-event semantics and protected run/artifact/coverage contracts.
+
+## Proposed raw-event contract and preview
+
+See `raw-event-contract.md` and `raw-event-report-th.md`. The isolated preview checks strict bounded JSON, protected payload/run/artifact/analyzer binding, explicit phase/coverage and per-event operation/result. It preserves ports, targets and unsupported events for inspection. It never produces CAP evidence or authorization; proposal approval and genuine collector integration remain pending. Existing evaluator, DEC register and OpenSSF summary adapter are unchanged. Synthetic fixture provenance is explicit.
+
+## Linux controlled collector PoC
+
+See `linux-collector-report-th.md` and `experiments/linux-collector/README.md`. The isolated Python/C research prototype includes preflight, trace parser, local binding/freshness/replay checks and controlled-workload runner. Actual ptrace and namespace probes were denied, so live collection and end-to-end execution remain blocked. Unit traces are synthetic and complete coverage is never asserted. Core, DEC and adapters remain unchanged.
+
+## Local pipeline hardening
+
+Current results: `pipeline-hardening-report-th.md`. Added inspection-only rawpreview command and protected local snapshot bridge to acceptance/replay, conservative PID attribution, minimal mounts, private ledger checks and staged output. Twenty Python tests include real Go executable bridge on synthetic inputs. Live sandbox and authorization remain blocked; historical reports describe earlier revisions. No existing DEC or core semantics changed.
+
+## Phase 1–2 loss enforcement
+
+Current state: `phase1-2-report-th.md`. Runtime remains blocked; no available Docker/Podman/QEMU or attached supported host. Collection now emits an explicit loss sidecar and strict pipeline BLOCK before ledger consumption for incomplete/ambiguous input. Producer completeness claims remain pending independent verification. Synthetic bridge behavior intentionally changed from inspection acceptance to adapter_pending_spike; existing core semantics and DEC statuses are unchanged.
+
+## Controlled integration harness and CI alignment
+
+Current results: `controlled-harness-report-th.md`. Added non-privileged testing Docker/Compose profile, explicit PASS/BLOCKED/FAIL live harness, controlled restricted-file/bind attempts, configuration regression tests and strict live CI job. Thirty-five Python tests and 246 Go pass events passed; real workspace harness is BLOCKED (exit 2), not PASS. No container image or external CI execution is claimed; contracts/DEC remain unchanged.

@@ -1,0 +1,26 @@
+{
+  "changed_existing_files": [
+    "docs/implementation-report.md",
+    "docs/test-summary.json"
+  ],
+  "added_files": [
+    "adapters/raw-event-preview/preview.go",
+    "adapters/raw-event-preview/preview_test.go",
+    "adapters/raw-event-preview/testdata/synthetic-connect.json",
+    "docs/raw-event-contract.md",
+    "docs/raw-event-report-th.md"
+  ],
+  "unchanged_existing_files": 128,
+  "unexpected_changes": [],
+  "protected_paths_unchanged": [
+    "internal/",
+    "docs/decision-register.md",
+    "adapters/ossf-package-analysis/",
+    ".github/",
+    "go.mod",
+    "go.sum",
+    "LICENSE",
+    "vendor/"
+  ],
+  "generated_audit_and_manifest_excluded_from_pre_generation_comparison": true
+}

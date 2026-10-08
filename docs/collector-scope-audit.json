@@ -1,0 +1,27 @@
+{
+  "changed_existing_files": [
+    "docs/implementation-report.md",
+    "docs/test-summary.json"
+  ],
+  "added_files": [
+    "docs/linux-collector-report-th.md",
+    "experiments/linux-collector/README.md",
+    "experiments/linux-collector/collector.py",
+    "experiments/linux-collector/test_collector.py",
+    "experiments/linux-collector/testdata/runtime-probe.json",
+    "experiments/linux-collector/workload.c"
+  ],
+  "unexpected_changes": [],
+  "unchanged_existing_files": 134,
+  "protected_paths_unchanged": [
+    "internal/",
+    "adapters/",
+    "docs/decision-register.md",
+    ".github/",
+    "go.mod",
+    "go.sum",
+    "LICENSE",
+    "vendor/"
+  ],
+  "audit_and_manifest_generated_after_comparison": true
+}

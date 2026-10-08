@@ -1,0 +1,31 @@
+{
+  "runtime_probe": {
+    "tracing": "blocked",
+    "sandbox": "blocked",
+    "compiler": "available"
+  },
+  "live_pipeline": {
+    "exit_code": 2,
+    "blocker": "runtime_prerequisite_blocked",
+    "authorization_ready": false,
+    "pipeline_status": "BLOCK"
+  },
+  "real_go_bridge_on_synthetic_payload": {
+    "preview_process_succeeded": true,
+    "pipeline_status": "BLOCK",
+    "reason": "adapter_pending_spike",
+    "ledger_created": false,
+    "tampered_payload_blocked": true
+  },
+  "fault_injection": {
+    "output_fsync_failure": "no partial run",
+    "timeout_group_kill_reap": "mocked passed",
+    "pid_exit_reuse": "unattributed"
+  },
+  "live_success_path_verified": false,
+  "coverage_incomplete_gate": {
+    "pipeline_status": "BLOCK",
+    "reason": "collection_incomplete",
+    "ledger_created": false
+  }
+}

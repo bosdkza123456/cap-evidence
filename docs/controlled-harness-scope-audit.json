@@ -1,0 +1,34 @@
+{
+  "changed_existing_files": [
+    ".github/workflows/ci.yml",
+    "docs/implementation-report.md",
+    "docs/test-summary.json",
+    "experiments/linux-collector/README.md",
+    "experiments/linux-collector/workload.c"
+  ],
+  "added_files": [
+    ".dockerignore",
+    "Dockerfile",
+    "cmd/rawpreview/harness_config_test.go",
+    "docker-compose.yml",
+    "docs/controlled-harness-report-th.md",
+    "docs/integration-harness-live-result.json",
+    "experiments/linux-collector/harness.py",
+    "experiments/linux-collector/test_harness.py"
+  ],
+  "unexpected_changes": [],
+  "unchanged_existing_files": 144,
+  "protected_paths_unchanged": [
+    "internal/",
+    "adapters/",
+    "experiments/linux-collector/collector.py",
+    "docs/decision-register.md",
+    "docs/raw-event-contract.md",
+    "go.mod",
+    "go.sum",
+    "LICENSE",
+    "SECURITY.md",
+    "vendor/"
+  ],
+  "audit_and_manifest_generated_after_comparison": true
+}

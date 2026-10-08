@@ -1,0 +1,29 @@
+{
+  "changed_existing_files": [
+    "docs/implementation-report.md",
+    "docs/public-release-checklist.md",
+    "docs/test-summary.json",
+    "experiments/linux-collector/README.md",
+    "experiments/linux-collector/collector.py",
+    "experiments/linux-collector/test_collector.py"
+  ],
+  "added_files": [
+    "cmd/rawpreview/main.go",
+    "docs/pipeline-hardening-report-th.md",
+    "docs/pipeline-smoke-results.json"
+  ],
+  "unexpected_changes": [],
+  "unchanged_existing_files": 137,
+  "protected_paths_unchanged": [
+    "internal/",
+    "adapters/",
+    "docs/decision-register.md",
+    ".github/",
+    "go.mod",
+    "go.sum",
+    "LICENSE",
+    "SECURITY.md",
+    "vendor/"
+  ],
+  "manifest_and_audit_generated_after_comparison": true
+}
