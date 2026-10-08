@@ -1,0 +1,18 @@
+{
+  "changed_existing_files": [
+    "docs/proposals/README.md",
+    "docs/proposals/break-glass.md",
+    "docs/proposals/signing-trust.md"
+  ],
+  "unchanged_existing_files": 165,
+  "new_proposals": [
+    "trust-admission-detail.md",
+    "extension-backlog.md",
+    "acceptance-matrix.md",
+    "owner-review.md"
+  ],
+  "code_changed": false,
+  "dec_changed": false,
+  "planned_tests_executed": false,
+  "validation": "passed"
+}

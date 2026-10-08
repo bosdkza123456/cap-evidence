@@ -1,0 +1,18 @@
+{
+  "changed_existing_files": [
+    "docs/proposals/break-glass.md",
+    "docs/proposals/cel-constraints.md",
+    "docs/proposals/signing-trust.md",
+    "docs/quickstart-th.md"
+  ],
+  "unchanged_existing_files": 162,
+  "code_changed": false,
+  "dec_changed": false,
+  "proposals_approved": false,
+  "checks": [
+    "relative links",
+    "Markdown fences",
+    "PROPOSED and blank approvers",
+    "pre/post SHA-256 scope comparison"
+  ]
+}

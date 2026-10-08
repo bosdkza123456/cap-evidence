@@ -37,7 +37,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "1d61ed05738ebf90001135a4fb67002325c2e3f062e4ccd084f648e4df6a3e6e"
+    "sha256": "e9af8e5633a620559b75ff1249b4bde2faae3a4c486e2b55deb7292c75f1209e"
   },
   {
     "path": "SECURITY.md",
@@ -180,12 +180,28 @@
     "sha256": "0fc4d541a88e7d2f22677d355dd0e565361f649f709570534a4db1e78a2731f7"
   },
   {
+    "path": "docs/documentation-proposals-report.md",
+    "sha256": "60084779d112b6132cf88e2b1280fa60b5b8b8ab63e54a7ea25d4e84ecd6deaa"
+  },
+  {
+    "path": "docs/documentation-proposals-scope-audit.json",
+    "sha256": "9dba8f2c1e9b00436424b19d5daa782c53f7a28709df16c8ce24fb4442655c70"
+  },
+  {
+    "path": "docs/harness-diagnostic-report-th.md",
+    "sha256": "c92c80569c20c32c645e3b8e7e6deb3d352d4cf45090f299f0ee53c7cb8e19a6"
+  },
+  {
+    "path": "docs/harness-diagnostic-scope-audit.json",
+    "sha256": "cdf687dc2dc830d811921516b39832d8c20ea31fa5bfb0d7aa1f29e2a0ceee3e"
+  },
+  {
     "path": "docs/implementation-brief.md",
     "sha256": "872a86a96ba8ebf16a9e5e306e0a5ad87b8abe0b49392d6340c5f4e428643fe7"
   },
   {
     "path": "docs/implementation-report.md",
-    "sha256": "98786b7e8d2da704655ab7ecf446f174710d90fabc5f98ac0e8d5401895919ee"
+    "sha256": "8f023f3958757b7febec76b475ece9ccdf370872e8cb99a03fda7492efb359c6"
   },
   {
     "path": "docs/integration-harness-live-result.json",
@@ -224,12 +240,52 @@
     "sha256": "bee1ab1241cb53a025265317fb12b2475a6a12058b4b0fc2ee1f2013e4082fb1"
   },
   {
+    "path": "docs/proposal-refinement-report.md",
+    "sha256": "8c51f32a89e7ead703e34e1d997dc93332a97c3ebeb1f11699a33565bc8b671e"
+  },
+  {
+    "path": "docs/proposal-refinement-scope-audit.json",
+    "sha256": "1ca0057f237e91c343dcd1002b4f73e8303fc837eb762a2f178de8bf54b055ea"
+  },
+  {
+    "path": "docs/proposals/README.md",
+    "sha256": "2c3d3aaafed98be54093ce0582a4784b3097c060c759b318f8433988f414d623"
+  },
+  {
+    "path": "docs/proposals/acceptance-matrix.md",
+    "sha256": "4023c307095a95ad23dce5ab3b01d78062b0616c197e34a392efc06403488c2c"
+  },
+  {
+    "path": "docs/proposals/break-glass.md",
+    "sha256": "9400ac84ebfc1323316ad4cebdb24737b6b397a01a738ebbcb1917c9d4deaa7a"
+  },
+  {
+    "path": "docs/proposals/cel-constraints.md",
+    "sha256": "6df0639987e52b1b43df66ad89425a078db7812b98d75c41fbd5bc6028f253b0"
+  },
+  {
+    "path": "docs/proposals/extension-backlog.md",
+    "sha256": "fd9d0b19526a28889901bad6118ffc4cc4e1745a792a6a8a1a0e5227a44e8f6e"
+  },
+  {
+    "path": "docs/proposals/owner-review.md",
+    "sha256": "d389e59adc2f578266be1b7d671f94a4bd91d86806e1472ccdba3333d1d0f5ee"
+  },
+  {
+    "path": "docs/proposals/signing-trust.md",
+    "sha256": "56cb65a8237ba66446a80f2306c1464a3ac7ac0ff3136b8c0dde015c9e7eacd8"
+  },
+  {
+    "path": "docs/proposals/trust-admission-detail.md",
+    "sha256": "aa86284b43e43607cfcf12468168e589c207a6def51ce3c377a7c00528292ce8"
+  },
+  {
     "path": "docs/public-release-checklist.md",
     "sha256": "cdb9f2b37b53c553a683f0cc700e205d2375b3ea0fcd1f40bc1c69b710bbf063"
   },
   {
     "path": "docs/quickstart-th.md",
-    "sha256": "85e93c6c561e178c028d35bd1d224bd0e4208a6f2410596a79b2cfbad1f97be9"
+    "sha256": "d95287c75d3ab00b1d41bf84c5694cc0f962a21914d415d944a7ba06539de9f4"
   },
   {
     "path": "docs/raw-event-contract.md",
@@ -249,11 +305,19 @@
   },
   {
     "path": "docs/test-summary.json",
-    "sha256": "1fc49013413d6257015da68150bba7b97348d863f8f31a19a36d203d5ef85981"
+    "sha256": "ab31e0332ce80cd017fe14ac525cb794d3ce9783af01e97e5fb3caf50a2ce1ad"
   },
   {
     "path": "docs/threat-coverage.md",
     "sha256": "ae2f6ad87de444ca9b49b684686a06f39a4dd27b784895f3af07aa4f461f8b39"
+  },
+  {
+    "path": "docs/trust-backlog-report.md",
+    "sha256": "d350e5e33d1d61bf21f12e2230f0573671784341128b03c4ce7f5791e7479e1a"
+  },
+  {
+    "path": "docs/trust-backlog-scope-audit.json",
+    "sha256": "6a9fc615695d6a2fc264ebf6f6c6809c47b9162f66abe9f389a18bcd96f38dc2"
   },
   {
     "path": "experiments/linux-collector/README.md",
@@ -265,7 +329,7 @@
   },
   {
     "path": "experiments/linux-collector/harness.py",
-    "sha256": "cc469b22d60be26759ea3812e3d4f7d35bfca9256167f00cc6551d47a1612d0d"
+    "sha256": "fe04728db41a354c941563f32e8dbf5e5348e67b06697683502097e21068d056"
   },
   {
     "path": "experiments/linux-collector/test_collector.py",
@@ -273,7 +337,7 @@
   },
   {
     "path": "experiments/linux-collector/test_harness.py",
-    "sha256": "e2d7d91bbaf88dcb242c0c0f2d846e29778335aa2534300253219d694ed50866"
+    "sha256": "3dafda55ac4e81947d7f929c5da4705c4da5ac473644d2cd8196723901802425"
   },
   {
     "path": "experiments/linux-collector/testdata/runtime-probe.json",

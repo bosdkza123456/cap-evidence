@@ -47,3 +47,7 @@ Current state: `phase1-2-report-th.md`. Runtime remains blocked; no available Do
 ## Controlled integration harness and CI alignment
 
 Current results: `controlled-harness-report-th.md`. Added non-privileged testing Docker/Compose profile, explicit PASS/BLOCKED/FAIL live harness, controlled restricted-file/bind attempts, configuration regression tests and strict live CI job. Thirty-five Python tests and 246 Go pass events passed; real workspace harness is BLOCKED (exit 2), not PASS. No container image or external CI execution is claimed; contracts/DEC remain unchanged.
+
+## Controlled event diagnostic revision
+
+See `harness-diagnostic-report-th.md`. Failure summaries now expose fixed boolean raw/parsed/attributed event checks without argument values. PASS criteria remain unchanged; the user Codespaces live failure is not yet diagnosed from the supplied summaries. Core/DEC/collector unchanged.

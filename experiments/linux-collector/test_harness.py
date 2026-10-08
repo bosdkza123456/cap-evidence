@@ -48,4 +48,26 @@ class AdditionalHarnessTests(unittest.TestCase):
     self.assertEqual(h.main(),1)
    self.assertEqual(path.read_text(),'preserved')
 
+class EventDiagnosticTests(unittest.TestCase):
+ def test_markers_do_not_override_missing_loopback(self):
+  raw=b'10 1791473190.123267 execve("/work/workload", [], 0x0) = 0\n10 1791473190.127022 openat(AT_FDCWD, "/restricted/forbidden.txt", O_RDONLY) = -1 ENOENT\n10 1791473190.134078 bind(3, {sin_port=htons(12345), sin_addr=inet_addr("0.0.0.0")}, 16) = 0\n'
+  owners=h.c.attribution(raw,'r');checks=h.controlled_checks(raw,owners,'r')
+  self.assertTrue(checks['controlled_exec_observed']);self.assertTrue(checks['forbidden_file_attempt_observed'])
+  self.assertTrue(checks['bind_raw_marker']);self.assertTrue(checks['bind_attributed_marker'])
+  self.assertFalse(checks['bind_loopback_present']);self.assertFalse(checks['unapproved_bind_attempt_observed'])
+ def test_complete_records_preserve_existing_criteria(self):
+  raw=b'10 1791473190.123267 execve("/work/workload", [], 0x0) = 0\n10 1791473190.127022 openat(AT_FDCWD, "/restricted/forbidden.txt", O_RDONLY) = -1 ENOENT\n10 1791473190.134078 bind(3, {sin_port=htons(12345), sin_addr=inet_addr("127.0.0.1")}, 16) = 0\n'
+  checks=h.controlled_checks(raw,h.c.attribution(raw,'r'),'r')
+  self.assertTrue(all(checks[k] for k in ['controlled_exec_observed','forbidden_file_attempt_observed','unapproved_bind_attempt_observed']))
+ def test_unfinished_and_unattributed_never_satisfy(self):
+  raw=b'10 1791473190.123267 execve("/work/workload", [], 0x0 <unfinished ...>\n10 1791473190.127022 openat(AT_FDCWD, "/restricted/forbidden.txt", O_RDONLY) = -1 ENOENT\n'
+  checks=h.controlled_checks(raw,h.c.attribution(raw,'r'),'r')
+  self.assertTrue(checks['exec_raw_marker']);self.assertFalse(checks['exec_parsed_marker'])
+  self.assertTrue(checks['file_parsed_marker']);self.assertFalse(checks['forbidden_file_attempt_observed'])
+ def test_diagnostics_do_not_print_arguments(self):
+  import json
+  raw=b'10 1791473190.123267 execve("/work/workload", ["SECRET-MARKER"], 0x0) = 0\n'
+  checks=h.controlled_checks(raw,h.c.attribution(raw,'r'),'r')
+  self.assertNotIn('SECRET-MARKER',json.dumps(checks))
+
 if __name__=='__main__':unittest.main()

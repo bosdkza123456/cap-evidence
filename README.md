@@ -1,5 +1,39 @@
 # CAP-Evidence
 
+**Foundation evaluator + controlled Linux research harness**
+
+> **ALLOW ≠ SAFE.** A policy decision does not certify package safety. Harness PASS does not mean authorization ALLOW.
+
+[คู่มือเริ่มทดลองภาษาไทย](docs/quickstart-th.md) · [Implementation report](docs/implementation-report.md) · [Proposed extensions](docs/proposals/README.md)
+
+## Start here
+
+| Component | Current boundary |
+| --- | --- |
+| Core evaluator | Foundation `foundation-0.2`; unresolved decisions remain open |
+| Linux harness | Bundled controlled workload only; reports PASS / BLOCKED / FAIL |
+| Live pipeline | Candidate inspection; authorization mapping remains closed |
+| Signing, CEL, Break Glass | Documentation proposals only; not implemented |
+
+From the repository root on Linux, with Go, Python 3, cc, strace and bubblewrap installed:
+
+```bash
+go build -mod=vendor -trimpath -o /tmp/cap-rawpreview ./cmd/rawpreview
+python3 experiments/linux-collector/collector.py probe
+python3 experiments/linux-collector/harness.py --preview /tmp/cap-rawpreview
+echo "exit_code=$?"
+```
+
+| Harness status | Exit | Meaning |
+| --- | --- | --- |
+| PASS | 0 | Genuine controlled trace and closed pipeline checks succeeded; pipeline remains BLOCK |
+| BLOCKED | 2 | Runtime prerequisites unavailable/denied; no live success claimed |
+| FAIL | 1 | Collection or verification checks failed; inspect sanitized reason/checks |
+
+Kernel policy can block tracing/namespaces even when tools are installed. There is no unsandboxed fallback. `testdata/runtime-probe.json` is a historical sample, not a probe of your machine. Do not run arbitrary packages with this harness.
+
+## Foundation baseline
+
 **Semantic Design Baseline — Pre-Spike Validation**
 
 CAP-Evidence is a portable capability evidence and deterministic policy evaluation foundation. It evaluates evidence against operator policy; it does not certify packages as safe.

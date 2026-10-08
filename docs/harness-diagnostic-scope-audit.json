@@ -1,0 +1,14 @@
+{
+  "changed_existing_files": [
+    "docs/implementation-report.md",
+    "docs/test-summary.json",
+    "experiments/linux-collector/harness.py",
+    "experiments/linux-collector/test_harness.py"
+  ],
+  "added_files": [
+    "docs/harness-diagnostic-report-th.md"
+  ],
+  "unexpected_changes": [],
+  "unchanged_existing_files": 154,
+  "core_DEC_collector_CI_unchanged": true
+}

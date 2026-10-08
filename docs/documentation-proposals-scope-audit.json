@@ -1,0 +1,15 @@
+{
+  "existing_files_changed": [
+    "README.md",
+    "docs/quickstart-th.md"
+  ],
+  "all_other_baseline_files_unchanged": true,
+  "new_docs": [
+    "docs/proposals/README.md",
+    "docs/proposals/break-glass.md",
+    "docs/proposals/cel-constraints.md",
+    "docs/proposals/signing-trust.md"
+  ],
+  "implementation_added": false,
+  "original_dec_changed": false
+}

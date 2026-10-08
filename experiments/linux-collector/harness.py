@@ -24,6 +24,36 @@ def bounded(path):
     if len(data)>c.MAX_BYTES:raise c.Blocked('harness_resource_limit')
     return data
 
+def controlled_checks(raw, owners, run_id):
+    """Fixed boolean diagnostics only; retain the exact original PASS criteria."""
+    checks={key:False for key in (
+        'controlled_exec_observed','forbidden_file_attempt_observed','unapproved_bind_attempt_observed',
+        'exec_raw_marker','file_raw_marker','bind_raw_marker',
+        'exec_parsed_marker','file_parsed_marker','bind_parsed_marker',
+        'exec_attributed_marker','file_attributed_marker','bind_attributed_marker',
+        'bind_loopback_present')}
+    by_id={entry['event_id']:entry for entry in owners}
+    for index,line in enumerate(raw.decode('utf-8').splitlines()):
+        markers={'exec':'execve("/work/workload",' in line,
+                 'file':'"/restricted/forbidden.txt"' in line,
+                 'bind':'bind(' in line and 'htons(12345)' in line}
+        for key,present in markers.items():
+            checks[key+'_raw_marker'] |= present
+        match=c.LINE.fullmatch(line)
+        if not match:continue
+        _,call,args,ret,_=match.groups()
+        attributed=by_id.get(f'{run_id}:{index}',{}).get('attribution')=='workload'
+        for key,present in markers.items():
+            checks[key+'_parsed_marker'] |= present
+            checks[key+'_attributed_marker'] |= present and attributed
+        if not attributed:continue
+        checks['controlled_exec_observed'] |= call=='execve' and args.startswith('"/work/workload",') and int(ret)==0
+        checks['forbidden_file_attempt_observed'] |= call=='openat' and '"/restricted/forbidden.txt"' in args and int(ret)<0
+        checks['bind_loopback_present'] |= call=='bind' and 'htons(12345)' in args and '127.0.0.1' in args
+        checks['unapproved_bind_attempt_observed'] |= call=='bind' and 'htons(12345)' in args and '127.0.0.1' in args
+    return checks
+
+
 def run(preview,probe_fn=None,collect_fn=None):
     probe_fn=probe_fn or c.probe;collect_fn=collect_fn or c.collect
     verified_trace=False
@@ -47,18 +77,12 @@ def run(preview,probe_fn=None,collect_fn=None):
             if c.digest(Path(__file__).with_name('workload.c').read_bytes())!=binding.get('source_digest'):
                 return result('FAIL','controlled_source_mismatch')
             events,owners,loss=c.collection(raw,binding['run_id'])
-            by_id={entry['event_id']:entry for entry in owners}
-            saw_exec=saw_file=saw_bind=False
-            for index,line in enumerate(raw.decode('utf-8').splitlines()):
-                match=c.LINE.fullmatch(line)
-                if not match or by_id[f"{binding['run_id']}:{index}"]['attribution']!='workload':
-                    continue
-                _,call,args,ret,_=match.groups()
-                saw_exec |= call=='execve' and args.startswith('"/work/workload",') and int(ret)==0
-                saw_file |= call=='openat' and '"/restricted/forbidden.txt"' in args and int(ret)<0
-                saw_bind |= call=='bind' and 'htons(12345)' in args and '127.0.0.1' in args
-            if not (saw_exec and saw_file and saw_bind):
-                return result('FAIL','controlled_events_missing')
+            checks=controlled_checks(raw,owners,binding['run_id'])
+            checks['event_records']=len(events)
+            checks['parse_failures']=loss['parse_failures']
+            checks['unattributed_events']=loss['unattributed_events']
+            if not all(checks[key] for key in ('controlled_exec_observed','forbidden_file_attempt_observed','unapproved_bind_attempt_observed')):
+                return result('FAIL','controlled_events_missing',checks=checks)
             verified_trace=True
             ledger=Path(tmp)/'ledger.sqlite'
             try:
